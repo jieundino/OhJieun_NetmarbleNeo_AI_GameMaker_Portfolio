@@ -18,6 +18,8 @@ Unity C# 기반 개인 기술 프로토타입과 팀 게임 프로젝트에서
 
 ## Featured Projects
 
+### 1. Unity C# Client Systems (본 Repository 수록 코드)
+
 | 프로젝트 | 형태 / 역할 | 주요 기술 | 핵심 구현 및 문제 해결 |
 | --- | --- | --- | --- |
 | **Unity Skill Logic Prototype** | 개인 / Solo Developer | Unity, C#, ScriptableObject, Coroutine, Physics Query, UGUI | 스킬 설정 데이터와 Runtime State 분리, 실행 조건 검증, Normal·DoT·Area 실행 구조 |
@@ -25,12 +27,19 @@ Unity C# 기반 개인 기술 프로토타입과 팀 게임 프로젝트에서
 | **&lt;네 발자국&gt;** | 4인 / Main Client Programmer | Unity, C#, CSV, Dictionary, Newtonsoft.Json, UnityWebRequest | 데이터 기반 이벤트, Dialogue Queue, Save/Load 안정화, 로그 재시도 |
 | **&lt;Hey Cheese!&gt;** | 4인 / Mini-game Client Programmer | Unity, C#, Touch Input, Coroutine, UGUI | 4종 미니게임, 모바일 입력·완료 조건, 사용자 테스트 |
 
+### 2. AI-Assisted Game QA & Workflow Tooling (연계 워크플로 도구)
+
+| 프로젝트 | 형태 / 역할 | 주요 기술 | 핵심 구현 및 문제 해결 | 바로가기 |
+| --- | --- | --- | --- | --- |
+| **Unity QA Companion** | 개인 / Workflow & Spec Designer | HTML/CSS/JS, Prompt Spec, JSON Schema Validation | `<네 발자국>`의 `Issues.md` 파싱 → AI 프롬프트 생성 및 응답 검증 → 빌드 수동 테스트 기록 → 버그 리포트 생성 | [Live Preview](https://unity-qa-companion.vercel.app/) · [GitHub](https://github.com/jieundino/Unity-QA-Companion) · [기술 노트](./03_Technical_Notes/06_UnityQACompanion_AI_Workflow.md) |
+
 ### 주요 결과
 
 - **<필연과 우연>** — STOVE · App Store 출시, BIC · Beaver Rocks 전시
 - **<네 발자국>** — STOVE 출시, 학술발표 및 학술지 논문 제1저자
 - **<Hey Cheese!>** — 초등학생 30명 파일럿 테스트, JCCT 논문 제2저자
 - **Unity Skill Logic Prototype** — 개인 설계·구현 및 정상·실패·경계 조건 검증
+- **Unity QA Companion** — `<네 발자국>` 실데이터 기반 QA 워크플로 웹 도구 구축 및 배포
 
 ---
 
@@ -58,6 +67,12 @@ Unity C# 기반 개인 기술 프로토타입과 팀 게임 프로젝트에서
 - 한정된 AudioSource 자원의 우선순위 배분
 - 정상 조건뿐 아니라 실패·경계 조건을 포함한 검증
 
+### AI-Assisted Development & Workflow Design
+
+- **게임 런타임 코드(Unity/C#)**: AI를 설계 대안 비교·예외 케이스 점검 보조로 활용하되, 아키텍처 결정·코드 작성·런타임 검증은 직접 수행
+- **개발·QA 보조 도구(`Unity QA Companion`)**: 단계별 기능·상태 명세를 바탕으로 AI 코딩 도구(Vibe Coding)를 통제하여 빠르게 워크플로 도구 구축
+- 비결정적 AI 응답을 바로 신뢰하지 않고, 출력 JSON 스키마 명세화와 필수 필드·참조 무결성 방어 검증(Defensive Validation) 적용
+
 ### Documentation & Collaboration
 
 - 문제 상황과 재현 조건을 구체화
@@ -74,7 +89,7 @@ Unity C# 기반 개인 기술 프로토타입과 팀 게임 프로젝트에서
 
 ### 1. Unity Skill Logic Prototype
 
-[`06_SourceCode/00_UnitySkillLogicPrototype/README.md`](./06_SourceCode/00_UnitySkillLogicPrototype/README.md)
+[`05_SourceCode/00_UnitySkillLogicPrototype/README.md`](./05_SourceCode/00_UnitySkillLogicPrototype/README.md)
 
 개인 기술 프로토타입으로,  
 스킬 명세를 다음 단계로 구조화했습니다.
@@ -127,7 +142,7 @@ Feedback
 
 ---
 
-### 3. Project Contribution
+### 3. Project Contribution & AI Usage Scope
 
 [`01_Project_Contribution.md`](./01_Project_Contribution.md)
 
@@ -140,8 +155,30 @@ Feedback
 - 협업 경계
 - 제출 자료에서 제외한 영역
 
-생성형 AI를 활용한 프로젝트는  
+생성형 AI 및 AI 개발 도구를 활용한 프로젝트는  
 AI가 담당한 범위와 지원자가 직접 판단·수정·검증한 범위를 해당 문서에 별도로 명시합니다.
+
+---
+
+### 4. AI-Assisted QA Workflow Tool (`Unity QA Companion`)
+
+- **기술 노트:** [`03_Technical_Notes/06_UnityQACompanion_AI_Workflow.md`](./03_Technical_Notes/06_UnityQACompanion_AI_Workflow.md)
+- **Live Preview (Vercel):** [https://unity-qa-companion.vercel.app/](https://unity-qa-companion.vercel.app/) (`<네 발자국>` 데모 데이터 기본 탑재)
+- **GitHub Repository:** [https://github.com/jieundino/Unity-QA-Companion](https://github.com/jieundino/Unity-QA-Companion)
+
+Unity 게임 개발 중 기록한 `Issues.md` 문서를 체계적인 테스트 케이스로 전환하고, Windows 빌드 수동 검증 결과와 버그 리포트를 한곳에서 추적하기 위해 제작한 보조 웹 애플리케이션입니다.
+
+```text
+Issues.md Parsing
+    ↓
+Structured AI Prompt Generation
+    ↓
+External AI Response & Schema Validation
+    ↓
+Manual Build Test Logging (PASS / FAIL / BLOCKED)
+    ↓
+Bug Report & Fix Request Export
+```
 
 ---
 
@@ -178,8 +215,8 @@ Regression Verification
 
 관련 문서:
 
-- [`04_Technical_Notes/04_Fate_SFX_Priority_Channel.md`](./04_Technical_Notes/04_Fate_SFX_Priority_Channel.md)
-- [`05_Runtime_Issue_Analysis/Runtime_Issue_Analysis.md`](./05_Runtime_Issue_Analysis/Runtime_Issue_Analysis.md)
+- [`03_Technical_Notes/02_Fate_SFX_Priority_Channel.md`](./03_Technical_Notes/02_Fate_SFX_Priority_Channel.md)
+- [`04_Runtime_Issue_Analysis/Runtime_Issue_Analysis.md`](./04_Runtime_Issue_Analysis/Runtime_Issue_Analysis.md)
 
 ---
 
@@ -200,7 +237,7 @@ Regression Verification
 
 관련 문서:
 
-- [`04_Technical_Notes/02_FourFootsteps_SaveLoad_System.md`](./04_Technical_Notes/02_FourFootsteps_SaveLoad_System.md)
+- [`03_Technical_Notes/04_FourFootsteps_SaveLoad_System.md`](./03_Technical_Notes/04_FourFootsteps_SaveLoad_System.md)
 
 ---
 
@@ -224,7 +261,7 @@ Room별 특수 규칙은 하위 클래스에서 처리하도록 분리했습니�
 
 관련 문서:
 
-- [`04_Technical_Notes/03_Fate_ActionPointManager.md`](./04_Technical_Notes/03_Fate_ActionPointManager.md)
+- [`03_Technical_Notes/01_Fate_ActionPointManager.md`](./03_Technical_Notes/01_Fate_ActionPointManager.md)
 
 ---
 
@@ -235,26 +272,27 @@ README.md
 01_Project_Contribution.md
 02_SourceCode_Index.md
 
-04_Technical_Notes/
+03_Technical_Notes/
 ├─ 00_UnitySkillLogicPrototype_Architecture_Verification.md
-├─ 01_FourFootsteps_CSV_Event_System.md
-├─ 02_FourFootsteps_SaveLoad_System.md
-├─ 03_Fate_ActionPointManager.md
-├─ 04_Fate_SFX_Priority_Channel.md
-└─ 05_HeyCheese_Minigame_Logic.md
+├─ 01_Fate_ActionPointManager.md
+├─ 02_Fate_SFX_Priority_Channel.md
+├─ 03_FourFootsteps_CSV_Event_System.md
+├─ 04_FourFootsteps_SaveLoad_System.md
+├─ 05_HeyCheese_Minigame_Logic.md
+└─ 06_UnityQACompanion_AI_Workflow.md
 
-05_Runtime_Issue_Analysis/
+04_Runtime_Issue_Analysis/
 └─ Runtime_Issue_Analysis.md
 
-06_SourceCode/
+05_SourceCode/
 ├─ 00_UnitySkillLogicPrototype/
 │  ├─ SkillDataRuntimeSystem/
 │  ├─ SkillExecutionSystem/
 │  ├─ CombatFeedbackSystem/
 │  └─ PlayerControlSystem/
 │
-├─ 01_FourFootsteps_DataDrivenSystems/
-├─ 02_Fate_RuntimeSystems/
+├─ 01_Fate_RuntimeSystems/
+├─ 02_FourFootsteps_DataDrivenSystems/
 └─ 03_HeyCheese_MinigamePrototypes/
 ```
 
@@ -290,11 +328,17 @@ README.md
 따라서 본 Repository는 전체 Unity 프로젝트의 독립 실행본이 아니라  
 **지원자의 주요 구현과 문제 해결 과정을 확인하기 위한 코드 리뷰용 포트폴리오**입니다.
 
+### AI-Assisted QA Workflow Tool (`Unity QA Companion`)
+
+`05_SourceCode/` 내 Unity C# 클라이언트 코드의 성격과 명확히 구분하기 위해,  
+AI 코딩 도구(Vibe Coding)를 활용해 제작한 웹 기반 QA 보조 도구는 [별도 Repository](https://github.com/jieundino/Unity-QA-Companion)로 분리하고  
+본 포트폴리오에는 워크플로 설계·프롬프트 명세·스키마 검증 구조를 정리한 [기술 노트](./03_Technical_Notes/06_UnityQACompanion_AI_Workflow.md)를 수록했습니다.
+
 ---
 
 ## Runtime Issue Analysis
 
-[`05_Runtime_Issue_Analysis/Runtime_Issue_Analysis.md`](./05_Runtime_Issue_Analysis/Runtime_Issue_Analysis.md)
+[`04_Runtime_Issue_Analysis/Runtime_Issue_Analysis.md`](./04_Runtime_Issue_Analysis/Runtime_Issue_Analysis.md)
 
 개발·출시·전시·사용자 테스트 중 실제 발생한 런타임 이슈를 다음 기준으로 정리했습니다.
 

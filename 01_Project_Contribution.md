@@ -259,13 +259,40 @@
 
 ---
 
-# 5. 전체 기여 범위 요약
+# 5. AI-Assisted Workflow & QA Tooling — Unity QA Companion
 
-| 프로젝트 | 개발 형태 | 핵심 담당 영역 | 제출 코드 작성 비중 |
-| --- | --- | --- | --- |
-| Unity Skill Logic Prototype | 개인 프로젝트 | 스킬 데이터·상태·검증·실행·피드백 구조 | 100% |
-| 네 발자국 | 공동개발 | 데이터 기반 이벤트, Save/Load, 로그 안정성 | 100% |
-| 필연과 우연 | 공동개발 | 상태 기반 진행, 퍼즐 입력, 상호작용, SFX 채널 | 100% |
-| Hey Cheese! | 공동개발 | 미니게임 입력, 조건 판정, 상태 피드백 | 100% |
+## 5.1 프로젝트 정보
 
-> 제출 코드 작성 비중 100%는 **본 Repository에 선별해 포함한 파일 기준**입니다. 공동개발 프로젝트 전체 코드 기여율을 의미하지 않으며, 프로젝트 전체 및 개발 파트 기여 비중은 각 프로젝트 표에 별도로 제시했습니다.
+| 항목 | 내용 |
+| --- | --- |
+| 개발 형태 | 개인 프로젝트 (AI 보조 개발 / QA 워크플로 도구) |
+| 담당 역할 | Solo Developer (Workflow & Specification Design) |
+| 담당 기간 | 2026 |
+| 주요 기술 | HTML, CSS, JavaScript, LocalStorage, Prompt Specification, JSON Validation |
+| 외부 링크 | [GitHub Repository](https://github.com/jieundino/Unity-QA-Companion) · [Live Preview (Vercel)](https://unity-qa-companion.vercel.app/) · [기술 노트](./03_Technical_Notes/06_UnityQACompanion_AI_Workflow.md) |
+
+## 5.2 포트폴리오 내 포함 기준 및 구분
+
+- 본 Repository의 `05_SourceCode/` 폴더는 **지원자가 직접 설계·작성·수정한 Unity C# 클라이언트 코드**만 엄격히 포함하기 위해, 웹 기반 보조 도구인 `Unity QA Companion`의 전체 소스코드는 [별도 GitHub 저장소](https://github.com/jieundino/Unity-QA-Companion)로 분리했습니다.
+- 본 포트폴리오에서는 **게임 클라이언트 개발·QA 과정에서 겪은 반복 병목을 AI 개발 도구와 프롬프트 명세화로 어떻게 해결했는지**를 기술 노트([`03_Technical_Notes/06_UnityQACompanion_AI_Workflow.md`](./03_Technical_Notes/06_UnityQACompanion_AI_Workflow.md))와 실제 동작 데모로 제시합니다.
+
+## 5.3 지원자 직접 수행 범위 vs. AI 개발 도구 활용 범위
+
+| 구분 | 상세 내용 |
+| --- | --- |
+| **지원자 직접 설계·검증 범위** | - `<네 발자국>` 등 Unity 프로젝트 QA 흐름(`Issues.md` → 테스트 케이스 전환 → 빌드 실행 기록 → 버그 리포트 → 수정 요청 초안) 정의<br>- 이슈·테스트 케이스·실행 이력·버그 리포트 간 데이터 스키마 및 참조 관계 설계<br>- 외부 AI 도구에서 일관된 결과를 얻기 위한 테스트 케이스 생성 프롬프트 템플릿 명세화<br>- 잘못된 Markdown/JSON 입력, 필수 항목 누락, 중복 데이터 등 예외 조건 정의 및 방어 검증<br>- `<네 발자국>` 실제 이슈 데이터를 활용한 전체 워크플로 통합 검증 |
+| **AI 개발 도구 활용 범위** | - 단계별 기능 명세에 따른 HTML/CSS/JavaScript UI 및 로컬 저장소 처리 코드 생성(Vibe Coding) 보조<br>- 파서 및 유효성 검사 로직 구현 보조와 리팩터링 |
+
+---
+
+# 6. 전체 기여 범위 요약
+
+| 프로젝트 | 분류 | 개발 형태 | 핵심 담당 영역 | 제출 C# 코드 작성 비중 |
+| --- | --- | --- | --- | --- |
+| Unity Skill Logic Prototype | Unity C# Client | 개인 프로젝트 | 스킬 데이터·상태·검증·실행·피드백 구조 | 100% |
+| 네 발자국 | Unity C# Client | 공동개발 | 데이터 기반 이벤트, Save/Load, 로그 안정성 | 100% |
+| 필연과 우연 | Unity C# Client | 공동개발 | 상태 기반 진행, 퍼즐 입력, 상호작용, SFX 채널 | 100% |
+| Hey Cheese! | Unity C# Client | 공동개발 | 미니게임 입력, 조건 판정, 상태 피드백 | 100% |
+| Unity QA Companion | QA Workflow Tool (Web) | 개인 프로젝트 | QA 파이프라인 설계, 프롬프트 명세화, 스키마·예외 검증 | 별도 저장소 분리 ([GitHub](https://github.com/jieundino/Unity-QA-Companion)) |
+
+> 제출 C# 코드 작성 비중 100%는 **본 Repository(`05_SourceCode/`)에 선별해 포함한 Unity C# 파일 기준**입니다. 공동개발 프로젝트 전체 코드 기여율을 의미하지 않으며, 프로젝트 전체 및 개발 파트 기여 비중은 각 프로젝트 표에 별도로 제시했습니다.
