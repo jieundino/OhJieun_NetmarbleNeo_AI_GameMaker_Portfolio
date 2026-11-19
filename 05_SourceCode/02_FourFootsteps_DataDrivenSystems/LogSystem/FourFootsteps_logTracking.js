@@ -1,21 +1,26 @@
-const SPREADSHEET_ID = "1xwbc8Pgr39OpQudPEozyjl5PFthM0u_lexOVqmttTP4";
 const SHEET_NAME = "GameResultLogs";
-const API_KEY = "temporaryApiKey_FourfootstepsLog"; // Unity와 동일하게 맞추기
 const EVENT_ID_COLUMN = 2; // B열(1부터 시작): timestamp(A)=1, eventId(B)=2
 
 function doPost(e) {
   try {
     const payload = JSON.parse(e.postData.contents || "{}");
 
-    // 1) 간단 인증(공유키)
+    const properties = PropertiesService.getScriptProperties();
+    const apiKey = (properties.getProperty("API_KEY") || "").trim();
+    const spreadsheetId = (properties.getProperty("SPREADSHEET_ID") || "").trim();
+    if (!apiKey || !spreadsheetId) {
+      return json_({ ok: false, error: "Server configuration missing" });
+    }
+
+    // 공유 키 확인
     const receivedKey = String(payload.apiKey || "").trim();
-    if (!receivedKey || receivedKey !== API_KEY) {
+    if (!receivedKey || receivedKey !== apiKey) {
       return json_({ ok: false, error: "Unauthorized" });
     }
 
     // active가 아니라 ID로 고정 오픈
-    const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
-    let sheet = ss.getSheetByName(SHEET_NAME);
+    const ss = SpreadsheetApp.openById(spreadsheetId);
+    const sheet = ss.getSheetByName(SHEET_NAME);
     if (!sheet) return json_({ ok: false, error: "Sheet not found" });
 
     // 2) 필수값 체크
@@ -44,10 +49,10 @@ function doPost(e) {
     ];
 
     sheet.appendRow(row);
-  return json_({ ok: true });
+    return json_({ ok: true });
 
   } catch (err) {
-      return json_({ ok: false, error: String(err) });
+    return json_({ ok: false, error: "Log write failed" });
   }
 }
 

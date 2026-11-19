@@ -4,28 +4,28 @@ Unity C#으로 구현한 **전투 스킬 로직 기술 검증 프로토타입**�
 
 일반적인 전투 스킬 명세를 `Data → Runtime State → Validation → Execution → Feedback` 단계로 분해하고, Normal, DoT, Area 스킬의 실행 흐름과 예외 조건을 작은 Unity 환경에서 구현·검증했습니다.
 
-본 폴더에는 전체 Unity 프로젝트가 아니라 포트폴리오 검토에 필요한 **AI 에이전트의 코드 생성·수정 도움을 받아 구성한 핵심 C# 코드**를 정리했습니다.
+시스템별로 핵심 C# 파일을 선별했습니다.
 
-- [Architecture & Feature Verification 문서](../../03_Technical_Notes/00_UnitySkillLogicPrototype_Architecture_Verification.md)
+- [스킬 구조와 기능 검증](../../03_Technical_Notes/00_UnitySkillLogicPrototype_Architecture_Verification.md)
 
 <br>
 
-## 📌 Project Overview
+## 프로젝트 개요
 
 | 항목 | 내용 |
 | :--- | :--- |
 | **프로젝트명** | Unity Skill Logic Prototype |
-| **프로젝트 유형** | Skill Feature Verification Prototype |
+| **프로젝트 유형** | 스킬 기능 검증용 프로토타입 |
 | **플랫폼** | PC / Unity Prototype |
 | **엔진** | Unity |
 | **개발 언어** | C# |
 | **개발 기간** | 2026.07 |
-| **개발 형태** | Solo Development |
-| **담당 역할** | System Design / Client Programming / Feature Verification |
+| **개발 형태** | 개인 학습 프로젝트 |
+| **담당 역할** | 스킬 구조 설계, AI 보조 구현, Unity 기능 검증 |
 
 <br>
 
-## 🎯 Prototype Goal
+## 검증 목표
 
 완성형 전투 시스템을 제작하는 것보다 다음 질문을 검증하는 데 목적을 두었습니다.
 
@@ -49,21 +49,11 @@ Cooldown / Animation / UI Feedback
 
 <br>
 
-## 🙋‍♀️ My Role & AI Collaboration
+## 학습·구현·검증
 
-> **Project:** Unity Skill Logic Prototype  
-> **Role:** Solo learner/developer · AI-assisted implementation · Manual Unity QA  
-> **Contribution:** 인터넷 강의 학습, AI에 기대 동작·오류를 전달해 코드 생성·수정, 실제 Unity 검증 및 AI 보조 문서 작성
+인터넷 강의로 스킬 구조를 학습하고 AI 에이전트의 도움을 받아 코드를 생성·수정했습니다. AI가 제안한 QA 항목을 바탕으로 정상 동작과 실패 조건을 Unity에서 직접 확인했습니다.
 
-**학습 및 제작:** 인터넷 강의를 참고해 스킬 데이터, 상태, 실행 조건을 학습했습니다. 구현이 막히거나 오류가 발생했을 때 AI 에이전트에 상황과 기대하는 실행 결과를 설명해 코드 생성·수정을 요청했습니다.
-
-**검증:** AI가 제안한 QA 항목을 바탕으로 대상 없음·사거리 초과·쿨타임 재사용·다중 Collider·DoT·Area 동작과 UI 상태를 직접 Unity에서 실행했습니다. 기대와 다른 결과가 있으면 수정 요청 후 다시 확인했습니다.
-
-**문서화:** 기술 설명과 QA 기록 초안 정리에 AI 에이전트의 도움을 받았습니다.
-
-**코드 기여 비율:** AI 코드 생성·수정이 포함되므로 '전 코드 100% 직접 작성'으로 주장하지 않습니다. 직접 작성 비율은 미산정입니다.
-
-상세 구분: [AI 활용 기록](../../../docs/AI_ASSISTED_DEVELOPMENT.md) · [기여 범위](../../../01_Project_Contribution.md)
+[AI 협업과 기능 검증](../../docs/AI_ASSISTED_DEVELOPMENT.md) · [기여 범위](../../01_Project_Contribution.md)
 
 <br>
 

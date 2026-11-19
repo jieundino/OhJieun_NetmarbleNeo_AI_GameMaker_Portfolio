@@ -1,18 +1,10 @@
-# Unity QA Companion — AI-Assisted QA Workflow & Tooling
+# Unity QA Companion — QA 도구 설계와 검증
 
-> **Project:** Unity QA Companion  
-> **Role:** Solo Developer (Workflow & Specification Design)  
-> **Contribution:** QA 워크플로 설계, 데이터 스키마·검증 규칙 정의, AI 프롬프트 명세화 및 단계별 구현·검증  
-> **Repository:** [GitHub — Unity-QA-Companion](https://github.com/jieundino/Unity-QA-Companion)  
-> **Live Preview:** [Unity QA Companion (Vercel)](https://unity-qa-companion.vercel.app/)
+## 1. 도구 개요
 
-> **Structured Prompt Specification · Defensive JSON Validation · Human-in-the-Loop QA Pipeline**
+Unity 프로젝트의 이슈 목록(`Issues.md`)에서 테스트 케이스를 만들고, Windows 빌드의 수동 테스트 결과와 버그 리포트를 연결하는 웹 도구입니다. QA 절차와 데이터 검증 규칙을 설계하고, 웹 구현에 AI 코딩 도구를 사용했습니다.
 
-## 1. 문서 목적
-
-본 문서는 Unity 게임 개발 과정에서 발생한 이슈(`Issues.md`)를 구조화된 테스트 케이스로 전환하고, Windows 빌드 수동 테스트 결과와 버그 리포트 작성까지 하나의 흐름으로 관리하기 위해 제작한 웹 애플리케이션 **Unity QA Companion**의 설계 의도와 AI 활용 방식을 정리합니다.
-
-게임 클라이언트 런타임 코드(C#)와 달리, 개발·QA 생산성을 높이기 위한 보조 도구(Companion Tooling)를 구축할 때 **AI 개발 도구(Vibe Coding)와 생성형 AI 프롬프트 명세화를 어떻게 엔지니어링 통제 하에 활용했는지** 보여주는 데 목적이 있습니다.
+[GitHub 저장소](https://github.com/jieundino/Unity-QA-Companion) · [실행 데모](https://unity-qa-companion.vercel.app/)
 
 ---
 
@@ -45,7 +37,7 @@ Manual Build Test Execution & Result Logging (PASS / FAIL / BLOCKED)
 Bug Report · Fix Request Draft · Markdown / CSV / JSON Export
 ```
 
-| 단계 | 핵심 책임 | 엔지니어링 통제 포인트 |
+| 단계 | 핵심 책임 | 확인 항목 |
 | --- | --- | --- |
 | Issue Parsing | `Issues.md` 업로드 및 구조화 파싱 | 원문과 파싱 결과 대조 검수, 잘못된 Markdown 입력 방어 |
 | Prompt Generation | 선택 이슈 기반 테스트 케이스 생성용 프롬프트 조립 | 일관된 JSON 스키마로 출력되도록 프롬프트 규칙 명세화 |
@@ -58,11 +50,11 @@ Bug Report · Fix Request Draft · Markdown / CSV / JSON Export
 
 ## 4. 핵심 설계 결정
 
-### 4.1 Human-in-the-Loop 기반 AI 테스트 케이스 생성
+### 4.1 테스트 케이스 생성과 등록
 
 외부 AI API를 클라이언트에 직접 연동하면 API 키 관리와 비용, 프로젝트 보안 정책 문제가 발생할 수 있습니다.
 
-이를 피하기 위해 **앱이 이슈 맥락과 출력 스키마를 포함한 정교한 프롬프트를 생성**하고, 사용자가 외부 AI 도구의 응답을 붙여넣으면 **앱이 스키마를 검증한 뒤 검수 과정을 거쳐 등록**하는 Human-in-the-Loop 방식을 선택했습니다.
+앱은 선택한 이슈와 출력 스키마를 담은 프롬프트를 생성합니다. 사용자가 외부 AI 도구의 응답을 붙여넣으면 앱이 스키마를 검사하고, 사용자가 내용을 검토한 뒤 테스트 케이스를 등록합니다.
 
 ```text
 Selected Issue Data
@@ -73,7 +65,7 @@ Selected Issue Data
 → Test Case 확정 등록
 ```
 
-### 4.2 비결정적 AI 출력에 대한 방어적 검증 (Defensive Validation)
+### 4.2 Markdown 및 JSON 입력 검증
 
 생성형 AI의 응답이나 사용자가 수정한 Markdown/JSON 입력은 항상 정상 형식을 보장하지 않습니다.
 
@@ -84,17 +76,13 @@ Selected Issue Data
 
 ### 4.3 `<네 발자국>` 실제 개발·QA 데이터 연동
 
-추상적인 더미 데이터 대신, 직접 메인 클라이언트 프로그래머로 개발·출시한 **`<네 발자국 (Four Footsteps)>`의 이슈 및 QA 데이터**를 기본 샘플로 탑재했습니다.
+메인 클라이언트 프로그래머로 참여한 「네 발자국」의 이슈와 QA 기록을 기본 샘플로 담았습니다.
 
 별도의 JSON 파일을 준비하지 않아도 [Live Preview](https://unity-qa-companion.vercel.app/) 접속 즉시 실제 Unity 게임 개발 이슈가 어떻게 테스트 케이스와 실행 기록, 버그 리포트로 이어지는지 확인할 수 있습니다.
 
-### 4.4 AI 보조 개발(Vibe Coding)에서의 단계별 명세와 검증
+### 4.4 AI 코딩 도구를 활용한 구현
 
-본 웹 애플리케이션은 AI 코딩 도구를 적극 활용해 구현하되, 다음과 같은 기준으로 엔지니어링 통제를 유지했습니다.
-
-1. **기능 및 상태 명세 선행**: 코드를 생성하기 전에 이슈·테스트 케이스·실행 기록·버그 리포트 간의 데이터 관계와 상태 전이 규칙을 먼저 정의
-2. **단계별 구현 및 통합 테스트**: 단일 프롬프트로 전체 앱을 생성하지 않고, 기능 단위로 분할 구현하며 단계마다 입출력 예외를 검증
-3. **명확한 책임 경계 설정**: 실제 게임 빌드 실행 자동화나 메일 자동 발송처럼 MVP 범위를 벗어나는 기능은 제외하고, 로컬 저장 기반 QA 워크플로 완성도에 집중
+이슈·테스트 케이스·실행 기록·버그 리포트 간의 데이터 관계와 상태 전이 규칙을 먼저 정의했습니다. AI 코딩 도구로 기능별 코드를 생성·수정하면서 단계마다 입력과 출력의 예외를 확인했습니다.
 
 ---
 
@@ -115,7 +103,7 @@ Selected Issue Data
 
 - `<네 발자국>` 등 Unity 프로젝트의 `Issues.md` 문서에서 테스트 케이스 작성, 빌드 검증 기록, 버그 리포트 출력까지 이어지는 단일 QA 워크플로 도구를 완성했습니다.
 - 백엔드 서버 없이 브라우저에서 즉시 동작하는 MVP와 단독 실행 파일(`UnityQACompanion-standalone.html`), [Vercel 웹 배포 환경](https://unity-qa-companion.vercel.app/)을 구축했습니다.
-- AI를 단순 코드 생성기가 아니라 **구조화된 프롬프트 설계 + 스키마 검증 기반의 워크플로 구성 요소**로 활용하는 실무형 사례를 정리했습니다.
+- 실제 빌드를 실행한 사람이 테스트 결과를 판정하고, 실패 기록에서 버그 리포트 초안을 만들 수 있습니다.
 
 ---
 
