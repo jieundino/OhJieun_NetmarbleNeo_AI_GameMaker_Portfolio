@@ -10,8 +10,8 @@ public class EndingLogQueueManager : MonoBehaviour
     public static EndingLogQueueManager Instance;
 
     [Header("Google Apps Script Web App")]
-    [SerializeField] private string webAppUrl = "https://script.google.com/macros/s/AKfycbzQVEKPEqz4LasQJ1i6g4JDlZupZAYHVycJh162GRhHOgeiqP9I5usooWxcO8p_stq5YA/exec";
-    [SerializeField] private string apiKey = "temporaryApiKey_FourfootstepsLog";
+    [SerializeField] private string webAppUrl = "";
+    [SerializeField] private string apiKey = "";
 
     [Header("Queue / Retry")]
     [SerializeField] private int maxQueueSize = 20;

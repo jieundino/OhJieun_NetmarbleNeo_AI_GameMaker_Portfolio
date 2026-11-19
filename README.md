@@ -2,7 +2,6 @@
 
 **넷마블네오 2026 AI 인턴십 지원용 | Unity/C# · AI-assisted development · QA**
 
-> **게임을 실제로 구현하고 출시한 경험을 바탕으로, AI를 개발 도구로 활용하되 결과를 직접 검증합니다.**  
 > [지원용 Notion 포트폴리오](https://rich-ulna-bb7.notion.site/AI-Game-Maker-Portfolio-2026-AI-41cdb6505b7c804dab74fba580f52a40) · [기존 코드 포트폴리오](https://github.com/jieundino/OhJieun_Game-Programmer_Source-Code-Portfolio)
 
 ## 우선 볼 프로젝트
@@ -17,7 +16,7 @@
 
 > **프로젝트 코드의 소유·기여는 유형마다 다릅니다.** 특히 Unity Skill Logic Prototype은 개인 프로젝트지만 코드 생성·수정 과정에 AI 에이전트가 참여했습니다. `1인 프로젝트`가 `C# 코드 100% 직접 작성`을 뜻하지 않습니다. 상세 내용은 [AI 사용 기록](./docs/AI_ASSISTED_DEVELOPMENT.md)과 [프로젝트별 기여 범위](./01_Project_Contribution.md)에 있습니다.
 
-## 두 가지 AI 활용 사례를 구분합니다
+## AI 활용 사례
 
 **Unity Skill Logic Prototype — AI와 함께 게임 기능 구현**
 
@@ -39,7 +38,7 @@
 ## 주요 산출물과 성과
 
 - **필연과 우연:** STOVE·App Store 출시, 2025 BIC·Beaver Rocks 전시(팀 공동 성과).
-- **네 발자국:** STOVE 2026.02 출시. 연구는 2026.04까지 진행; 관련 학술지 논문 제1저자([DOI](https://doi.org/10.22819/kscg.2026.39.4.002)). 연구용 로그 수집은 정식 출시 빌드와 구분.
+- **네 발자국:** 2026.02 STOVE 출시. 2026.04까지 후속 연구 진행. 연구용 빌드에서 엔딩 로그를 수집했습니다. [관련 학술지 논문 (제1저자)](https://doi.org/10.22819/kscg.2026.39.4.002)
 - **Hey Cheese!:** Android 테스트 빌드, 일반 초등학생 30명 파일럿 테스트, 관련 JCCT 논문 **제3저자**([DOI](https://doi.org/10.17703/JCCT.2025.11.6.321)). 정식 출시를 확인하지 않아 출시작으로 표시하지 않음.
 
 실적의 근거와 한계는 [성과 증빙 안내](./docs/EVIDENCE_AND_SCOPE.md)에 기재했습니다. 30명 파일럿 결과는 실제 경계선 지능 아동의 학습 효과를 입증하는 자료가 아닙니다.
@@ -52,7 +51,3 @@
 4. [소스코드 인덱스](./02_SourceCode_Index.md) 및 [런타임 이슈](./04_Runtime_Issue_Analysis/Runtime_Issue_Analysis.md)를 참고합니다.
 
 **범위:** 이 저장소는 게임 전체의 독립 실행 Unity 프로젝트가 아닙니다. 코드 리뷰를 위해 선별한 C# 소스, 일부 폴더별 설명, 기술 문서로 구성됩니다. 특정 기능은 원본 프로젝트의 Scene, Prefab, 데이터, 리소스, 매니저에 의존합니다. 코드가 존재한다고 해서 이 저장소만으로 게임 전체를 실행할 수 있다는 뜻은 아닙니다.
-
----
-
-**제작·검증의 사실관계가 최우선입니다.** 팀 프로젝트의 성과, 개인 기여, AI가 생성한 코드, 직접 수행한 QA는 동일한 기여로 계산하지 않습니다.

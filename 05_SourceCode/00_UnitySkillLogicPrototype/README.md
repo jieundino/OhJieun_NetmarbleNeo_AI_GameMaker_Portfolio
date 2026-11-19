@@ -61,9 +61,9 @@ Cooldown / Animation / UI Feedback
 
 **문서화:** 기술 설명과 QA 기록 초안 정리에 AI 에이전트의 도움을 받았습니다.
 
-**코드 기여 비율:** AI 코드 생성·수정이 포함되므로 '전 코드 100% 직접 작성'으로 주장하지 않습니다. 직접 작성 비율은 미산정입니다.
+**코드 기여 비율:** 코드 생성·수정에 AI를 사용했으며 직접 작성 비율은 측정하지 않았습니다.
 
-상세 구분: [AI 활용 기록](../../../docs/AI_ASSISTED_DEVELOPMENT.md) · [기여 범위](../../../01_Project_Contribution.md)
+상세 구분: [AI 활용 기록](../../docs/AI_ASSISTED_DEVELOPMENT.md) · [기여 범위](../../01_Project_Contribution.md)
 
 <br>
 
