@@ -6,7 +6,7 @@ Unity C#으로 구현한 **전투 스킬 로직 기술 검증 프로토타입**�
 
 본 폴더에는 전체 Unity 프로젝트가 아니라 포트폴리오 검토에 필요한 **AI 에이전트의 코드 생성·수정 도움을 받아 구성한 핵심 C# 코드**를 정리했습니다.
 
-- [Architecture & Feature Verification 문서](../../04_Technical_Notes/00_UnitySkillLogicPrototype_Architecture_Verification.md)
+- [Architecture & Feature Verification 문서](../../03_Technical_Notes/00_UnitySkillLogicPrototype_Architecture_Verification.md)
 
 <br>
 
