@@ -27,4 +27,4 @@
 - Android 환경의 실제 터치·UI·상태 흐름 검증
 - 사용자 테스트 결과와 검증 한계 문서화
 
-상세 설명은 [`04_Technical_Notes/05_HeyCheese_Minigame_Logic.md`](../../03_Technical_Notes/05_HeyCheese_Minigame_Logic.md)를 참고합니다.
+상세 설명은 [`03_Technical_Notes/05_HeyCheese_Minigame_Logic.md`](../../03_Technical_Notes/05_HeyCheese_Minigame_Logic.md)를 참고합니다.
