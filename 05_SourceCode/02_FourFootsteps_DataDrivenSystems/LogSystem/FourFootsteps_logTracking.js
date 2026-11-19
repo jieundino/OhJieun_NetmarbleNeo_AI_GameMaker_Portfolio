@@ -1,6 +1,6 @@
 const SPREADSHEET_ID = "1xwbc8Pgr39OpQudPEozyjl5PFthM0u_lexOVqmttTP4";
 const SHEET_NAME = "GameResultLogs";
-const API_KEY = "1xwbc8Pgr39OpQudPEozyjl5PFthM0u_FourfootstepsLog"; // Unity와 동일하게 맞추기
+const API_KEY = "temporaryApiKey_FourfootstepsLog"; // Unity와 동일하게 맞추기
 const EVENT_ID_COLUMN = 2; // B열(1부터 시작): timestamp(A)=1, eventId(B)=2
 
 function doPost(e) {
