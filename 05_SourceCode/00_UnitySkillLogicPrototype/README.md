@@ -4,7 +4,7 @@ Unity C#으로 구현한 **전투 스킬 로직 기술 검증 프로토타입**�
 
 일반적인 전투 스킬 명세를 `Data → Runtime State → Validation → Execution → Feedback` 단계로 분해하고, Normal, DoT, Area 스킬의 실행 흐름과 예외 조건을 작은 Unity 환경에서 구현·검증했습니다.
 
-본 폴더에는 전체 Unity 프로젝트가 아니라 포트폴리오 검토에 필요한 **직접 작성한 핵심 C# 코드**를 정리했습니다.
+본 폴더에는 전체 Unity 프로젝트가 아니라 포트폴리오 검토에 필요한 **AI 에이전트의 코드 생성·수정 도움을 받아 구성한 핵심 C# 코드**를 정리했습니다.
 
 - [Architecture & Feature Verification 문서](../../04_Technical_Notes/00_UnitySkillLogicPrototype_Architecture_Verification.md)
 
@@ -49,31 +49,21 @@ Cooldown / Animation / UI Feedback
 
 <br>
 
-## 🙋‍♀️ My Role
+## 🙋‍♀️ My Role & AI Collaboration
 
 > **Project:** Unity Skill Logic Prototype  
-> **Role:** Solo Developer / System Designer  
-> **Contribution:** 스킬 시스템 요구사항 정의, 구조 설계, 구현·수정 및 기능 검증
+> **Role:** Solo learner/developer · AI-assisted implementation · Manual Unity QA  
+> **Contribution:** 인터넷 강의 학습, AI에 기대 동작·오류를 전달해 코드 생성·수정, 실제 Unity 검증 및 AI 보조 문서 작성
 
-본 프로젝트는 개인 기술 프로토타입으로 진행했으며 다음 영역을 직접 설계하고 구현했습니다.
+**학습 및 제작:** 인터넷 강의를 참고해 스킬 데이터, 상태, 실행 조건을 학습했습니다. 구현이 막히거나 오류가 발생했을 때 AI 에이전트에 상황과 기대하는 실행 결과를 설명해 코드 생성·수정을 요청했습니다.
 
-- ScriptableObject 기반 스킬 데이터 구조 설계
-- Skill Data와 Runtime State 분리
-- 스킬 슬롯별 쿨타임 상태 관리
-- 스킬 사용 요청과 실제 효과 실행 책임 분리
-- 가장 가까운 적 자동 탐색 및 사거리 검증
-- Normal / DoT / Area 스킬 실행 규칙 구현
-- Coroutine 기반 DoT 처리
-- 범위 공격 대상 중복 제거
-- Enemy Health 및 사망 상태 구현
-- 이벤트 기반 Enemy Health Bar 갱신
-- Skill Cooldown UI 및 범위 Indicator 구현
-- 카메라 기준 이동과 스킬 사용 방향 전환 구현
-- 기능별 성공·실패·경계 조건 검증 시나리오 정의
+**검증:** AI가 제안한 QA 항목을 바탕으로 대상 없음·사거리 초과·쿨타임 재사용·다중 Collider·DoT·Area 동작과 UI 상태를 직접 Unity에서 실행했습니다. 기대와 다른 결과가 있으면 수정 요청 후 다시 확인했습니다.
 
-생성형 AI는 설계 대안 비교, API 및 구현 방식 검토,
-디버깅과 테스트 케이스 점검을 위한 보조 도구로 활용했습니다.
-최종 구조 선택, 코드 통합, 예외 조건 정의와 실행 결과 검증은 직접 수행했습니다.
+**문서화:** 기술 설명과 QA 기록 초안 정리에 AI 에이전트의 도움을 받았습니다.
+
+**코드 기여 비율:** AI 코드 생성·수정이 포함되므로 '전 코드 100% 직접 작성'으로 주장하지 않습니다. 직접 작성 비율은 미산정입니다.
+
+상세 구분: [AI 활용 기록](../../../docs/AI_ASSISTED_DEVELOPMENT.md) · [기여 범위](../../../01_Project_Contribution.md)
 
 <br>
 

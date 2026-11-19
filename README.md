@@ -1,366 +1,58 @@
-# Unity C# Game Programmer Source Code Portfolio
+# 오지은 | AI Game Maker — 게임 개발·AI 협업 포트폴리오
 
-**오지은 | Unity C# Game Programmer**
+**넷마블네오 2026 AI 인턴십 지원용 | Unity/C# · AI-assisted development · QA**
 
-Unity C# 기반 개인 기술 프로토타입과 팀 게임 프로젝트에서
-직접 설계·구현·수정한 주요 소스코드를 선별한 포트폴리오입니다.
+> **게임을 실제로 구현하고 출시한 경험을 바탕으로, AI를 개발 도구로 활용하되 결과를 직접 검증합니다.**  
+> [지원용 Notion 포트폴리오](https://app.notion.com/p/41cdb6505b7c804dab74fba580f52a40) · [기존 코드 포트폴리오](https://github.com/jieundino/OhJieun_Game-Programmer_Source-Code-Portfolio)
 
-게임 기능을 단순히 동작시키는 데서 끝내지 않고,
-**요구사항 → 데이터/상태 구조 → 조건 검증 → 실행 → 피드백**의 흐름으로 나누어 구현하고,
-반복 입력, 상태 불일치, 저장 실패, 자원 충돌과 같은 런타임 문제를
-재현·분석·수정·검증해 온 과정을 함께 정리했습니다.
+## 우선 볼 프로젝트
 
-공동 프로젝트는 지원자가 직접 작성하거나 수정한 코드만 선별했으며,
-프로젝트별 역할, 기여 비중, 코드 소유 범위와 협업 경계는
-[`01_Project_Contribution.md`](./01_Project_Contribution.md)에서 확인할 수 있습니다.
-
----
-
-## Featured Projects
-
-### 1. Unity C# Client Systems (본 Repository 수록 코드)
-
-| 프로젝트 | 형태 / 역할 | 주요 기술 | 핵심 구현 및 문제 해결 |
+| 우선순위 | 프로젝트 | 이 저장소에서 확인할 것 | 역할과 AI 사용 범위 |
 | --- | --- | --- | --- |
-| **Unity Skill Logic Prototype** | 개인 / Solo Developer | Unity, C#, ScriptableObject, Coroutine, Physics Query, UGUI | 스킬 설정 데이터와 Runtime State 분리, 실행 조건 검증, Normal·DoT·Area 실행 구조 |
-| **&lt;필연과 우연&gt;** | 6인 / Client · System Programmer | Unity, C#, UI Event System, Coroutine, AudioSource | 퍼즐, 행동력·날짜 진행, SFX 우선순위 채널, 입력·상태 예외 대응 |
-| **&lt;네 발자국&gt;** | 4인 / Main Client Programmer | Unity, C#, CSV, Dictionary, Newtonsoft.Json, UnityWebRequest | 데이터 기반 이벤트, Dialogue Queue, Save/Load 안정화, 로그 재시도 |
-| **&lt;Hey Cheese!&gt;** | 4인 / Mini-game Client Programmer | Unity, C#, Touch Input, Coroutine, UGUI | 4종 미니게임, 모바일 입력·완료 조건, 사용자 테스트 |
+| 1 | **Unity Skill Logic Prototype** (2026.07) | [스킬 실행 코드](./05_SourceCode/00_UnitySkillLogicPrototype/) · [기술 노트](./03_Technical_Notes/00_UnitySkillLogicPrototype_Architecture_Verification.md) · [시연](https://youtu.be/QM03HsZIwEM) | 인터넷 강의 학습 + **AI 에이전트 코드 생성·수정** + **본인 Unity QA 실행**. 개인 학습·제작 프로젝트. |
+| 2 | **네 발자국** (제작·출시 2025.03–2026.02) | [이벤트·Save/Load·로그 코드](./05_SourceCode/02_FourFootsteps_DataDrivenSystems/) · [기술 노트](./03_Technical_Notes/04_FourFootsteps_SaveLoad_System.md) · [플레이 영상](https://youtu.be/013OU2ZJlbk) | 4인 공동개발. 메인 클라이언트 프로그래머 및 초기 콘셉트 기획. **논문 후속 연구는 2026.04까지 별도 진행**. |
+| 3 | **필연과 우연** (2024.03–2026.01) | [행동력·퍼즐·SFX 코드](./05_SourceCode/01_Fate_RuntimeSystems/) · [런타임 이슈 기록](./04_Runtime_Issue_Analysis/Runtime_Issue_Analysis.md) · [플레이 영상](https://youtu.be/kjaH9fDRmMo) | 6인 공동개발. 클라이언트·시스템 개발, 출시·전시 QA 및 변경 의도 공유. |
+| 4 | **Unity QA Companion** (2026) | [독립 저장소](https://github.com/jieundino/Unity-QA-Companion) · [실행 데모](https://unity-qa-companion.vercel.app/) · [QA 워크플로 문서](./03_Technical_Notes/06_UnityQACompanion_AI_Workflow.md) | AI 코딩 도구로 웹 구현을 보조받고, 이슈 → 테스트 케이스 → 검증 → 버그 리포트의 워크플로·데이터 규칙 설계. |
+| 5 | **Hey Cheese!** (2025.03–2025.07) | [미니게임 코드](./05_SourceCode/03_HeyCheese_MinigamePrototypes/) · [기술 노트](./03_Technical_Notes/05_HeyCheese_Minigame_Logic.md) · [플레이 영상](https://youtu.be/4RVUEoXP8Yw) | 4인 공동개발. 4종 미니게임 클라이언트와 Android 파일럿 테스트. 얼굴·표정 인식은 본인 직접 구현 범위가 아님. |
 
-### 2. AI-Assisted Game QA & Workflow Tooling (연계 워크플로 도구)
+> **프로젝트 코드의 소유·기여는 유형마다 다릅니다.** 특히 Unity Skill Logic Prototype은 개인 프로젝트지만 코드 생성·수정 과정에 AI 에이전트가 참여했습니다. `1인 프로젝트`가 `C# 코드 100% 직접 작성`을 뜻하지 않습니다. 상세 내용은 [AI 사용 기록](./docs/AI_ASSISTED_DEVELOPMENT.md)과 [프로젝트별 기여 범위](./01_Project_Contribution.md)에 있습니다.
 
-| 프로젝트 | 형태 / 역할 | 주요 기술 | 핵심 구현 및 문제 해결 | 바로가기 |
-| --- | --- | --- | --- | --- |
-| **Unity QA Companion** | 개인 / Workflow & Spec Designer | HTML/CSS/JS, Prompt Spec, JSON Schema Validation | `<네 발자국>`의 `Issues.md` 파싱 → AI 프롬프트 생성 및 응답 검증 → 빌드 수동 테스트 기록 → 버그 리포트 생성 | [Live Preview](https://unity-qa-companion.vercel.app/) · [GitHub](https://github.com/jieundino/Unity-QA-Companion) · [기술 노트](./03_Technical_Notes/06_UnityQACompanion_AI_Workflow.md) |
+## 두 가지 AI 활용 사례를 구분합니다
 
-### 주요 결과
+**Unity Skill Logic Prototype — AI와 함께 게임 기능 구현**
 
-- **<필연과 우연>** — STOVE · App Store 출시, BIC · Beaver Rocks 전시
-- **<네 발자국>** — STOVE 출시, 학술발표 및 학술지 논문 제1저자
-- **<Hey Cheese!>** — 초등학생 30명 파일럿 테스트, JCCT 논문 제2저자
-- **Unity Skill Logic Prototype** — 개인 설계·구현 및 정상·실패·경계 조건 검증
-- **Unity QA Companion** — `<네 발자국>` 실데이터 기반 QA 워크플로 웹 도구 구축 및 배포
+인터넷 강의로 관련 개념을 학습한 후, 오류와 목표 동작을 AI 에이전트에 설명해 코드를 생성·수정했습니다. AI가 제안한 QA 목록에 따라 대상 없음, 사거리 초과, 쿨타임, DoT·Area, 다중 Collider, UI 상태를 **실제 Unity에서 직접 점검**했습니다. QA 항목 작성과 기술 문서 정리에도 AI의 도움을 받았습니다. AI 작성 코드 비율은 측정하지 않았습니다.
 
----
+**Unity QA Companion — AI 활용을 위한 검증 워크플로 설계**
 
-## Core Skills
+`Issues.md`를 테스트 케이스 생성 프롬프트로 변환하고, 외부 AI 응답의 JSON 구조·필수 값·참조 관계를 검증한 뒤 수동 빌드 테스트를 기록합니다. **AI가 생성한 테스트 케이스와 사람이 판단한 테스트 결과를 구분**합니다. 웹 구현에는 AI 코딩 도구의 도움을 받았습니다.
 
-### Game System Design
+## 실제 게임 개발에서 해결한 문제
 
-- 기능 요구사항을 데이터, Runtime State, Validation, Execution 단계로 분해
-- 설정 데이터와 플레이 중 변경되는 상태를 분리해 관리
-- 공통 실행 흐름과 콘텐츠별 예외 규칙 분리
-- 기능 실행 성공 여부에 따라 후속 상태와 피드백을 적용
+| 사례 | 원인·판단 | 검증할 코드·문서 |
+| --- | --- | --- |
+| 저장 실패와 데이터 복원 | 임시 파일 교체(Atomic Write), 백업, 역직렬화 예외 처리 | [네 발자국 Save/Load](./03_Technical_Notes/04_FourFootsteps_SaveLoad_System.md) |
+| 행동력 중복 차감 | 반복 입력과 상태 전환 시점이 충돌하지 않도록 가드 | [필연과 우연 상태 흐름](./03_Technical_Notes/01_Fate_ActionPointManager.md) |
+| 효과음 누락 | 유한한 `AudioSource`의 우선순위·예약 채널·반복 클릭 제어 | [SFX 채널 정책](./03_Technical_Notes/02_Fate_SFX_Priority_Channel.md) |
+| 스킬 발동과 쿨타임 불일치 | 스킬 종류별 발동 성공 조건을 나누고 실패 요청의 상태 변화 차단 | [Skill Logic 검증](./03_Technical_Notes/00_UnitySkillLogicPrototype_Architecture_Verification.md) |
 
-### Data & State Management
+## 주요 산출물과 성과
 
-- CSV·ID 기반 데이터 중심 이벤트 구조
-- `Dictionary`, `Queue`, `HashSet`을 목적에 맞게 활용
-- Save/Load 데이터와 Runtime State의 일관성 관리
-- 선택·이벤트·멀티엔딩 상태를 데이터와 연결
+- **필연과 우연:** STOVE·App Store 출시, 2025 BIC·Beaver Rocks 전시(팀 공동 성과).
+- **네 발자국:** STOVE 2026.02 출시. 연구는 2026.04까지 진행; 관련 학술지 논문 제1저자([DOI](https://doi.org/10.22819/kscg.2026.39.4.002)). 연구용 로그 수집은 정식 출시 빌드와 구분.
+- **Hey Cheese!:** Android 테스트 빌드, 일반 초등학생 30명 파일럿 테스트, 관련 JCCT 논문 **제3저자**([DOI](https://doi.org/10.17703/JCCT.2025.11.6.321)). 정식 출시를 확인하지 않아 출시작으로 표시하지 않음.
 
-### Runtime Stability
+실적의 근거와 한계는 [성과 증빙 안내](./docs/EVIDENCE_AND_SCOPE.md)에 기재했습니다. 30명 파일럿 결과는 실제 경계선 지능 아동의 학습 효과를 입증하는 자료가 아닙니다.
 
-- 반복 입력과 중복 실행 방어
-- 저장·복원 과정의 상태 불일치 분석
-- Coroutine 및 Scene 수명주기 관련 문제 확인
-- 한정된 AudioSource 자원의 우선순위 배분
-- 정상 조건뿐 아니라 실패·경계 조건을 포함한 검증
+## 코드 검토 순서 및 저장소 안내
 
-### AI-Assisted Development & Workflow Design
+1. [프로젝트별 기여 범위](./01_Project_Contribution.md)에서 맡은 작업과 AI 코딩 도움을 확인합니다.
+2. [스킬 시스템 코드](./05_SourceCode/00_UnitySkillLogicPrototype/)와 [기술 노트](./03_Technical_Notes/00_UnitySkillLogicPrototype_Architecture_Verification.md)를 비교합니다.
+3. [네 발자국 코드](./05_SourceCode/02_FourFootsteps_DataDrivenSystems/)와 [필연과 우연 코드](./05_SourceCode/01_Fate_RuntimeSystems/)의 실제 개발 사례를 검토합니다.
+4. [소스코드 인덱스](./02_SourceCode_Index.md) 및 [런타임 이슈](./04_Runtime_Issue_Analysis/Runtime_Issue_Analysis.md)를 참고합니다.
 
-- **게임 런타임 코드(Unity/C#)**: AI를 설계 대안 비교·예외 케이스 점검 보조로 활용하되, 아키텍처 결정·코드 작성·런타임 검증은 직접 수행
-- **개발·QA 보조 도구(`Unity QA Companion`)**: 단계별 기능·상태 명세를 바탕으로 AI 코딩 도구(Vibe Coding)를 통제하여 빠르게 워크플로 도구 구축
-- 비결정적 AI 응답을 바로 신뢰하지 않고, 출력 JSON 스키마 명세화와 필수 필드·참조 무결성 방어 검증(Defensive Validation) 적용
-
-### Documentation & Collaboration
-
-- 문제 상황과 재현 조건을 구체화
-- 원인, 수정 내용, 확인 결과를 문서로 기록
-- 공동 프로젝트의 직접 구현 범위와 협업 경계를 명시
-- 구조적 한계와 후속 개선 방향을 구분해 정리
+**범위:** 이 저장소는 게임 전체의 독립 실행 Unity 프로젝트가 아닙니다. 코드 리뷰를 위해 선별한 C# 소스, 일부 폴더별 설명, 기술 문서로 구성됩니다. 특정 기능은 원본 프로젝트의 Scene, Prefab, 데이터, 리소스, 매니저에 의존합니다. 코드가 존재한다고 해서 이 저장소만으로 게임 전체를 실행할 수 있다는 뜻은 아닙니다.
 
 ---
 
-## Recommended Review Order
-
-코드 리뷰 시 아래 순서로 확인하면  
-개인 프로토타입의 설계부터 실제 팀 프로젝트의 문제 해결 과정까지 빠르게 파악할 수 있습니다.
-
-### 1. Unity Skill Logic Prototype
-
-[`05_SourceCode/00_UnitySkillLogicPrototype/README.md`](./05_SourceCode/00_UnitySkillLogicPrototype/README.md)
-
-개인 기술 프로토타입으로,  
-스킬 명세를 다음 단계로 구조화했습니다.
-
-```text
-Skill Data
-    ↓
-Runtime State
-    ↓
-Validation
-    ↓
-Execution
-    ↓
-Feedback
-```
-
-주요 확인 포인트:
-
-- ScriptableObject 설정 데이터와 슬롯별 Runtime 쿨타임 상태 분리
-- 대상 탐색과 사거리 검증
-- Normal / DoT / Area 스킬 실행
-- 실행 성공 시에만 쿨타임 적용
-- 사망 대상 제외
-- 다중 Collider 대상의 중복 피해 방지
-- DoT 재적용 처리
-- Health / Cooldown UI와 Runtime 상태 연결
-
----
-
-### 2. Source Code Index
-
-[`02_SourceCode_Index.md`](./02_SourceCode_Index.md)
-
-전체 코드 중 우선 검토할 파일과  
-각 코드에서 확인할 수 있는 설계 포인트를 정리했습니다.
-
-대표 검토 순서:
-
-1. Skill Data / Runtime
-2. Skill Activation Pipeline
-3. Target / Status Handling
-4. Combat Feedback
-5. Event / Result Pipeline
-6. Save Reliability
-7. Log Retry
-8. Action Point State Flow
-9. SFX Channel Policy
-10. Puzzle Validation
-11. Mini-game Logic
-
----
-
-### 3. Project Contribution & AI Usage Scope
-
-[`01_Project_Contribution.md`](./01_Project_Contribution.md)
-
-공동 프로젝트에서 실제 담당 범위를 명확히 하기 위해 다음 기준을 구분했습니다.
-
-- 전체 프로젝트 기준 기여 비중
-- 개발 파트 기준 기여 비중
-- 제출 코드의 직접 작성·수정 범위
-- 직접 담당 기능
-- 협업 경계
-- 제출 자료에서 제외한 영역
-
-생성형 AI 및 AI 개발 도구를 활용한 프로젝트는  
-AI가 담당한 범위와 지원자가 직접 판단·수정·검증한 범위를 해당 문서에 별도로 명시합니다.
-
----
-
-### 4. AI-Assisted QA Workflow Tool (`Unity QA Companion`)
-
-- **기술 노트:** [`03_Technical_Notes/06_UnityQACompanion_AI_Workflow.md`](./03_Technical_Notes/06_UnityQACompanion_AI_Workflow.md)
-- **Live Preview (Vercel):** [https://unity-qa-companion.vercel.app/](https://unity-qa-companion.vercel.app/) (`<네 발자국>` 데모 데이터 기본 탑재)
-- **GitHub Repository:** [https://github.com/jieundino/Unity-QA-Companion](https://github.com/jieundino/Unity-QA-Companion)
-
-Unity 게임 개발 중 기록한 `Issues.md` 문서를 체계적인 테스트 케이스로 전환하고, Windows 빌드 수동 검증 결과와 버그 리포트를 한곳에서 추적하기 위해 제작한 보조 웹 애플리케이션입니다.
-
-```text
-Issues.md Parsing
-    ↓
-Structured AI Prompt Generation
-    ↓
-External AI Response & Schema Validation
-    ↓
-Manual Build Test Logging (PASS / FAIL / BLOCKED)
-    ↓
-Bug Report & Fix Request Export
-```
-
----
-
-## Representative Problem Solving
-
-### 1. SFX 채널 포화로 핵심 효과음이 누락되는 문제  
-**<필연과 우연>**
-
-빠른 반복 클릭과 이벤트 효과음이 동시에 요청될 때  
-낮은 중요도의 반복음이 한정된 `AudioSource` 채널을 점유해  
-핵심 연출음이 재생되지 않는 문제가 발생했습니다.
-
-```text
-Repeated SFX Requests
-        ↓
-AudioSource Channel Saturation
-        ↓
-Priority Classification
-        ↓
-Reserved Channels
-        ↓
-Voice Stealing + Debounce
-        ↓
-Regression Verification
-```
-
-적용한 방식:
-
-- Low / High 두 단계의 SFX 우선순위
-- 중요 SFX를 위한 예약 채널
-- 높은 우선순위 요청의 Voice Stealing
-- 반복 클릭 요청 Debounce
-- Round-robin 방식의 채널 분산
-
-관련 문서:
-
-- [`03_Technical_Notes/02_Fate_SFX_Priority_Channel.md`](./03_Technical_Notes/02_Fate_SFX_Priority_Channel.md)
-- [`04_Runtime_Issue_Analysis/Runtime_Issue_Analysis.md`](./04_Runtime_Issue_Analysis/Runtime_Issue_Analysis.md)
-
----
-
-### 2. Save/Load 데이터 손상과 복원 실패  
-**<네 발자국>**
-
-저장 과정의 실패나 일부 데이터의 역직렬화 오류가  
-전체 게임 진행을 복구할 수 없는 상황으로 이어지지 않도록  
-저장 안정성을 개선했습니다.
-
-주요 구현:
-
-- 임시 파일 작성 후 교체하는 Atomic Write
-- 기존 저장본 `.bak` 백업
-- 복합 타입 전용 직렬화
-- 손상 데이터 fallback
-- 저장 후 Runtime State와 View 상태 동기화
-
-관련 문서:
-
-- [`03_Technical_Notes/04_FourFootsteps_SaveLoad_System.md`](./03_Technical_Notes/04_FourFootsteps_SaveLoad_System.md)
-
----
-
-### 3. 행동력 시스템의 공통 흐름과 Room별 규칙 분리  
-**<필연과 우연>**
-
-스테이지마다 행동력 규칙이 달라지면서  
-하나의 클래스에 조건문을 계속 추가하는 방식의 유지보수성이 낮아졌습니다.
-
-공통적인
-
-```text
-Action Point Update
-→ UI Update
-→ Date Check
-→ Transition
-```
-
-흐름은 상위 구조에서 관리하고,  
-Room별 특수 규칙은 하위 클래스에서 처리하도록 분리했습니다.
-
-관련 문서:
-
-- [`03_Technical_Notes/01_Fate_ActionPointManager.md`](./03_Technical_Notes/01_Fate_ActionPointManager.md)
-
----
-
-## Source Code Structure
-
-```text
-README.md
-01_Project_Contribution.md
-02_SourceCode_Index.md
-
-03_Technical_Notes/
-├─ 00_UnitySkillLogicPrototype_Architecture_Verification.md
-├─ 01_Fate_ActionPointManager.md
-├─ 02_Fate_SFX_Priority_Channel.md
-├─ 03_FourFootsteps_CSV_Event_System.md
-├─ 04_FourFootsteps_SaveLoad_System.md
-├─ 05_HeyCheese_Minigame_Logic.md
-└─ 06_UnityQACompanion_AI_Workflow.md
-
-04_Runtime_Issue_Analysis/
-└─ Runtime_Issue_Analysis.md
-
-05_SourceCode/
-├─ 00_UnitySkillLogicPrototype/
-│  ├─ SkillDataRuntimeSystem/
-│  ├─ SkillExecutionSystem/
-│  ├─ CombatFeedbackSystem/
-│  └─ PlayerControlSystem/
-│
-├─ 01_Fate_RuntimeSystems/
-├─ 02_FourFootsteps_DataDrivenSystems/
-└─ 03_HeyCheese_MinigamePrototypes/
-```
-
----
-
-## Code Ownership & Scope
-
-### Unity Skill Logic Prototype
-
-개인 기술 프로토타입으로,  
-요구사항 정의, 구조 설계, 코드 작성·수정 및 실행 검증을 직접 수행했습니다.
-
-생성형 AI를 활용한 부분은  
-설계 대안 비교, API 및 구현 방식 검토, 디버깅과 테스트 케이스 점검 등  
-개발 보조 범위로 구분하고,  
-최종 구조 선택과 코드 통합, 예외 조건 정의 및 실행 결과 검증은 직접 수행했습니다.
-
-구체적인 AI 활용 범위는  
-[`01_Project_Contribution.md`](./01_Project_Contribution.md)에 명시했습니다.
-
-### Team Projects
-
-공동 프로젝트 폴더에는 지원자가 직접 작성하거나 직접 수정한 코드만 선별했습니다.
-
-일부 코드는 원본 Unity 프로젝트의 다음 요소에 의존합니다.
-
-- Scene
-- Prefab
-- 다른 Manager
-- CSV / 콘텐츠 데이터
-- 외부 패키지
-
-따라서 본 Repository는 전체 Unity 프로젝트의 독립 실행본이 아니라  
-**지원자의 주요 구현과 문제 해결 과정을 확인하기 위한 코드 리뷰용 포트폴리오**입니다.
-
-### AI-Assisted QA Workflow Tool (`Unity QA Companion`)
-
-`05_SourceCode/` 내 Unity C# 클라이언트 코드의 성격과 명확히 구분하기 위해,  
-AI 코딩 도구(Vibe Coding)를 활용해 제작한 웹 기반 QA 보조 도구는 [별도 Repository](https://github.com/jieundino/Unity-QA-Companion)로 분리하고  
-본 포트폴리오에는 워크플로 설계·프롬프트 명세·스키마 검증 구조를 정리한 [기술 노트](./03_Technical_Notes/06_UnityQACompanion_AI_Workflow.md)를 수록했습니다.
-
----
-
-## Runtime Issue Analysis
-
-[`04_Runtime_Issue_Analysis/Runtime_Issue_Analysis.md`](./04_Runtime_Issue_Analysis/Runtime_Issue_Analysis.md)
-
-개발·출시·전시·사용자 테스트 중 실제 발생한 런타임 이슈를 다음 기준으로 정리했습니다.
-
-```text
-Impact
-→ Reproduction
-→ Observation
-→ Root Cause
-→ Fix
-→ Verification
-→ Follow-up
-```
-
-대표 사례:
-
-- 행동력 연속 입력에 따른 중복 차감
-- 퍼즐 오브젝트의 잘못된 DropZone 배치
-- 핵심 효과음 누락
-- Dialogue / Event 실행 순서 충돌
-- Save/Load 직렬화 오류
-- 저장 상태와 UI 상태 불일치
-- BGM 전환 중 오디오 자원 누적
-
-`Follow-up` 항목은 현재 구현된 기능과 혼동되지 않도록  
-추후 리팩터링 또는 테스트 개선 시 검토할 방향으로 구분했습니다.
+**제작·검증의 사실관계가 최우선입니다.** 팀 프로젝트의 성과, 개인 기여, AI가 생성한 코드, 직접 수행한 QA는 동일한 기여로 계산하지 않습니다.

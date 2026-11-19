@@ -1,5 +1,7 @@
 # Source Code Index
 
+> **AI 사용 표기:** Unity Skill Logic Prototype은 개인 학습 프로젝트로 AI 에이전트의 코드 생성·수정 도움을 받았습니다. 제출 코드 100% 직접 작성으로 표현하지 않습니다. 상세 내용은 [AI 활용 기록](./docs/AI_ASSISTED_DEVELOPMENT.md)을 참고하세요.
+
 본 문서는 면접관과 코드 리뷰어가 핵심 구현을 빠르게 확인할 수 있도록 소스코드의 권장 열람 순서와 확인 지점을 정리합니다.
 
 ## 공통 안내

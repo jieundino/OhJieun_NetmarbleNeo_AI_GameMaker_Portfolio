@@ -1,5 +1,7 @@
 # 네 발자국 — CSV 기반 Event / Result System
 
+> **프로젝트 기간:** 게임 제작·출시 2025.03–2026.02, 논문 관련 연구는 2026.04까지 별도 진행했습니다.
+
 > **Project:** &lt;네 발자국&gt;  
 > **Role:** Main Client Programmer / Initial Concept Planning  
 > **Contribution:** CSV 기반 이벤트 시스템 설계·구현 및 실행 흐름 검증
