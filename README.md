@@ -3,7 +3,7 @@
 **넷마블네오 2026 AI 인턴십 지원용 | Unity/C# · AI-assisted development · QA**
 
 > **게임을 실제로 구현하고 출시한 경험을 바탕으로, AI를 개발 도구로 활용하되 결과를 직접 검증합니다.**  
-> [지원용 Notion 포트폴리오](https://app.notion.com/p/41cdb6505b7c804dab74fba580f52a40) · [기존 코드 포트폴리오](https://github.com/jieundino/OhJieun_Game-Programmer_Source-Code-Portfolio)
+> [지원용 Notion 포트폴리오](https://rich-ulna-bb7.notion.site/AI-Game-Maker-Portfolio-2026-AI-41cdb6505b7c804dab74fba580f52a40) · [기존 코드 포트폴리오](https://github.com/jieundino/OhJieun_Game-Programmer_Source-Code-Portfolio)
 
 ## 우선 볼 프로젝트
 
